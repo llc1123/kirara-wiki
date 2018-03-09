@@ -2,10 +2,13 @@ module.exports = {
   'env': {
     'browser': true,
     'es6': true,
+    'node': true,
+    "jest/globals": true,
   },
   'parser': 'babel-eslint',
   'plugins': [
     'react',
+    'jest',
   ],
   'extends': [
     'eslint:recommended',
@@ -16,8 +19,8 @@ module.exports = {
     'indent': ['error', 2],
     'linebreak-style': ['error', 'unix'],
     'quotes': ['error', 'single'],
-    'no-confusing-arrow': ['error', {'allowParens': true}],
+    'no-confusing-arrow': ['error', { 'allowParens': true }],
     'no-console': ['warn'],
     'react/jsx-filename-extension': 'off',
-  }
+  },
 }
