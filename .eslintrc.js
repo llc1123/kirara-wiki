@@ -7,7 +7,10 @@ module.exports = {
   'plugins': [
     'react',
   ],
-  'extends': 'eslint:recommended',
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended'
+  ],
   'rules': {
     'semi': ['error', 'never'],
     'indent': ['error', 2],
