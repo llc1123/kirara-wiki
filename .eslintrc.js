@@ -3,7 +3,7 @@ module.exports = {
     'browser': true,
     'es6': true,
     'node': true,
-    "jest/globals": true,
+    'jest/globals': true,
   },
   'parser': 'babel-eslint',
   'plugins': [
@@ -12,7 +12,7 @@ module.exports = {
   ],
   'extends': [
     'eslint:recommended',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
   ],
   'rules': {
     'semi': ['error', 'never'],
@@ -20,7 +20,8 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'quotes': ['error', 'single'],
     'no-confusing-arrow': ['error', { 'allowParens': true }],
-    'no-console': ['warn'],
+    'no-console': 'warn',
+    'comma-dangle': ['error', 'always-multiline'],
     'react/jsx-filename-extension': 'off',
   },
 }
