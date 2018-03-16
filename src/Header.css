@@ -11,3 +11,7 @@
 .Header .btn-group .btn {
     box-shadow: none !important;
 }
+
+.Header img {
+    height: 38px
+}

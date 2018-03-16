@@ -4,14 +4,10 @@ import { Button, ButtonGroup } from 'reactstrap'
 import './Header.css'
 
 class Title extends Component{
-  static propTypes = {
-    'lang': PropTypes.string.isRequired,
-  }
-
   render(){
     return(
       <div className='Title'>
-        {this.props.lang}
+        <img src={process.env.PUBLIC_URL + '/images/wiki_logo.png'} alt="logo"/>
       </div>
     )
   }
@@ -26,7 +22,7 @@ class Header extends Component{
   render(){
     return(
       <div className="Header">
-        <Title lang={this.props.lang}/>
+        <Title />
         <ButtonGroup>
           <Button color="primary" onClick = {() => this.props.setLang('zh-CN')} active={this.props.lang === 'zh-CN'}>中文</Button>
           <Button color="primary" onClick = {() => this.props.setLang('ja-JP')} active={this.props.lang === 'ja-JP'}>日本語</Button>
