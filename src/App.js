@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from './Header'
 import Filter from './Filter'
 import CardList from './CardList'
 import CardDetails from './CardDetails'
@@ -8,9 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <header>
-          Header
-        </header>
+        <Header />
         <Filter />
         <div className='Cards'>
           <CardList />
