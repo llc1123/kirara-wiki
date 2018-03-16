@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
-import Filter from 'Filter'
-import CardList from 'CardList'
-import CardDetails from 'CardDetails'
+import Filter from './Filter'
+import CardList from './CardList'
+import CardDetails from './CardDetails'
 import './App.css'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className='App'>
+        <header>
+          Header
+        </header>
         <Filter />
-        <CardList />
-        <CardDetails />
+        <div className='Cards'>
+          <CardList />
+          <CardDetails />
+        </div>
       </div>
     )
   }

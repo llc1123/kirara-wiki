@@ -1,0 +1,34 @@
+.App {
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+header {
+    background: yellow;
+    height: 50px;
+    flex: 1 100%
+}
+
+.Filter {
+    background: red;
+    flex: 0 200px;
+}
+
+.Cards {
+    flex: 1;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-flow: column;
+}
+
+.CardList{
+    background: blue;
+    flex: 1
+}
+
+.CardDetails{
+    background: green;
+    flex: 0 420px
+}
