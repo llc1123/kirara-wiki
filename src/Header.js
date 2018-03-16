@@ -18,22 +18,19 @@ class Title extends Component{
 }
 
 class Header extends Component{
-  state = {
-    'lang': 'zh-CN',
-  }
-
-  setLang(lang){
-    this.setState({lang: lang})
+  static propTypes = {
+    'lang': PropTypes.string.isRequired,
+    'setLang': PropTypes.func.isRequired,
   }
 
   render(){
     return(
       <div className="Header">
-        <Title lang={this.state.lang}/>
+        <Title lang={this.props.lang}/>
         <ButtonGroup>
-          <Button color="primary" onClick = {() => this.setLang('zh-CN')} active={this.state.lang === 'zh-CN'}>中文</Button>
-          <Button color="primary" onClick = {() => this.setLang('ja-JP')} active={this.state.lang === 'ja-JP'}>日本語</Button>
-          <Button color="primary" onClick = {() => this.setLang('en-US')} active={this.state.lang === 'en-US'}>English</Button>
+          <Button color="primary" onClick = {() => this.props.setLang('zh-CN')} active={this.props.lang === 'zh-CN'}>中文</Button>
+          <Button color="primary" onClick = {() => this.props.setLang('ja-JP')} active={this.props.lang === 'ja-JP'}>日本語</Button>
+          <Button color="primary" onClick = {() => this.props.setLang('en-US')} active={this.props.lang === 'en-US'}>English</Button>
         </ButtonGroup>
       </div>
     )
