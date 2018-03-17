@@ -10,9 +10,9 @@ class App extends Component {
     'lang': 'zh-CN',
     'filter': {
       'rarity': {
-        'S': false,
-        'SR': false,
-        'SSR': true,
+        '☆☆☆': false,
+        '☆☆☆☆': false,
+        '☆☆☆☆☆': true,
       },
       'elements': {
         'Fire': true,
