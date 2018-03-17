@@ -9,9 +9,15 @@ class Filter extends Component{
     'setFilter': PropTypes.func.isRequired,
   }
 
-  renderButton(color, content, options){
+  clickHandler(category, item){
+    const f = this.props.filter
+    f[category][item] = !f[category][item]
+    this.props.setFilter(f)
+  }
+
+  renderButton(color, category, item, option){
     return(
-      <Button key={content} outline color={color} active={options}>{content}</Button>
+      <Button key={item} outline color={color} active={option} onClick={() => this.clickHandler(category, item)}>{item}</Button>
     )
   }
 
@@ -19,19 +25,19 @@ class Filter extends Component{
     return(
       <div className="Filter">
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.rarity).map((i) => this.renderButton('info', i, this.props.filter.rarity[i]))}
+          {Object.keys(this.props.filter.rarity).map((i) => this.renderButton('info', 'rarity', i, this.props.filter.rarity[i]))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.elements).map((i) => this.renderButton('success', i, this.props.filter.elements[i]))}
+          {Object.keys(this.props.filter.elements).map((i) => this.renderButton('success', 'elements', i, this.props.filter.elements[i]))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.classes).map((i) => this.renderButton('primary', i, this.props.filter.classes[i]))}
+          {Object.keys(this.props.filter.classes).map((i) => this.renderButton('primary', 'classes', i, this.props.filter.classes[i]))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.series).map((i) => this.renderButton('secondary', i, this.props.filter.series[i]))}
+          {Object.keys(this.props.filter.series).map((i) => this.renderButton('secondary', 'series', i, this.props.filter.series[i]))}
         </ButtonGroup>
       </div>
     )
