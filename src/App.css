@@ -12,6 +12,7 @@
 
 .Filter {
     background: lightgray;
+    height: calc(100vh - 58px);
     flex: 0 200px;
 }
 
@@ -34,4 +35,21 @@
 
 .btn {
     box-shadow: none !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: none; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

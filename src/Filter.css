@@ -1,5 +1,8 @@
 .Filter {
-    display: flex;
-    flex-flow: column wrap;
-    padding: 10px
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.Filter .btn-group-sm {
+    width: 100%
 }
