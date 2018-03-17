@@ -12,13 +12,15 @@ class Filter extends Component{
 
   clickHandler(category, item){
     const f = this.props.filter
-    f[category][item] = !f[category][item]
+    f[category][item][1] = !f[category][item][1]
     this.props.setFilter(f)
   }
 
-  renderButton(color, category, item, option){
+  renderButton(color, category, item){
     return(
-      <Button key={item} outline color={color} active={option} onClick={() => this.clickHandler(category, item)}>{item}</Button>
+      <Button key={item} outline color={color} active={this.props.filter[category][item][1]} onClick={() => this.clickHandler(category, item)}>
+        {this.props.filter[category][item][0]}
+      </Button>
     )
   }
 
@@ -26,19 +28,19 @@ class Filter extends Component{
     return(
       <div className={this.props.display ? 'Filter' : 'Filter hidden'}>
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.rarity).map((i) => this.renderButton('info', 'rarity', i, this.props.filter.rarity[i]))}
+          {Object.keys(this.props.filter.rarity).map((i) => this.renderButton('info', 'rarity', i))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.elements).map((i) => this.renderButton('success', 'elements', i, this.props.filter.elements[i]))}
+          {Object.keys(this.props.filter.elements).map((i) => this.renderButton('success', 'elements', i))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.classes).map((i) => this.renderButton('primary', 'classes', i, this.props.filter.classes[i]))}
+          {Object.keys(this.props.filter.classes).map((i) => this.renderButton('primary', 'classes', i))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {Object.keys(this.props.filter.series).map((i) => this.renderButton('secondary', 'series', i, this.props.filter.series[i]))}
+          {Object.keys(this.props.filter.series).map((i) => this.renderButton('secondary', 'series', i))}
         </ButtonGroup>
       </div>
     )

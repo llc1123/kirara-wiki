@@ -1,18 +1,28 @@
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Table } from 'reactstrap'
 import CharaList from './CharaList'
 import './CardList.css'
 
 class CardList extends Component{
+  static propTypes = {
+    'filter': PropTypes.object.isRequired,
+  }
+
   renderItem(key, item){
+    if (key % 10 === 1) return
+    if (!this.props.filter.rarity[item.Rare][1]) return
+    if (!this.props.filter.elements[item.Element][1]) return
+    if (!this.props.filter.classes[item.Class][1]) return
+    if (!this.props.filter.series[item.TitleType][1]) return 
     return(
       <tr>
         <th>{key}</th>
         <th>{item.Name}</th>
-        <th>{item.TitleType}</th>
-        <th>{item.Rare}</th>
-        <th>{item.Class}</th>
-        <th>{item.Element}</th>
+        <th>{this.props.filter.series[item.TitleType][0]}</th>
+        <th>{this.props.filter.rarity[item.Rare][0]}</th>
+        <th>{this.props.filter.classes[item.Class][0]}</th>
+        <th>{this.props.filter.elements[item.Element][0]}</th>
         <th>{item.HP}</th>
         <th>{item.ATK}</th>
         <th>{item.DEF}</th>
@@ -33,8 +43,8 @@ class CardList extends Component{
             <tr>
               <th>CharaID</th>
               <th>Name</th>
-              <th>TitleType</th>
-              <th>Rare</th>
+              <th>Title</th>
+              <th>Rarity</th>
               <th>Class</th>
               <th>Element</th>
               <th>HP</th>
