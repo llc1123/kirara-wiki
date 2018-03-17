@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Button, ButtonGroup } from 'reactstrap'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/fontawesome-free-solid'
 import './Header.css'
 
 class Title extends Component{
@@ -17,11 +19,13 @@ class Header extends Component{
   static propTypes = {
     'lang': PropTypes.string.isRequired,
     'setLang': PropTypes.func.isRequired,
+    'toggleFilter': PropTypes.func.isRequired,
   }
 
   render(){
     return(
       <div className="Header">
+        <FontAwesomeIcon icon={faBars} onClick={() => this.props.toggleFilter()}/>
         <Title />
         <ButtonGroup>
           <Button color="primary" onClick = {() => this.props.setLang('zh-CN')} active={this.props.lang === 'zh-CN'}>中文</Button>

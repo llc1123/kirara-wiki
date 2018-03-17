@@ -10,3 +10,9 @@
 .Header img {
     height: 38px
 }
+
+.Header .fa-bars {
+    width: 25px;
+    height: 25px;
+    margin: 6px 15px 7px 10px;
+}

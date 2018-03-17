@@ -8,6 +8,7 @@ import './App.css'
 class App extends Component {
   state = {
     'lang': 'zh-CN',
+    'displayFilter': true,
     'filter': {
       'rarity': {
         '☆☆☆': false,
@@ -54,11 +55,15 @@ class App extends Component {
     this.setState({filter: filter})
   }
 
+  toggleFilter(){
+    this.setState({displayFilter: !this.state.displayFilter})
+  }
+
   render() {
     return (
       <div className='App'>
-        <Header lang={this.state.lang} setLang={(lang) => this.setLang(lang)} />
-        <Filter filter={this.state.filter} setFilter={(filter) => this.setFilter(filter)} />
+        <Header lang={this.state.lang} setLang={(lang) => this.setLang(lang)} toggleFilter={() => this.toggleFilter()}/>
+        {this.state.displayFilter && <Filter filter={this.state.filter} setFilter={(filter) => this.setFilter(filter)} display={this.state.displayFilter}/>}
         <div className='Cards'>
           <CardList />
           <CardDetails />
