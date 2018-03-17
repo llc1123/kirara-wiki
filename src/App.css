@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 .App {
     margin: auto;
     display: flex;
@@ -24,7 +28,6 @@
 }
 
 .CardList{
-    background: blue;
     flex: 1
 }
 

@@ -12,7 +12,16 @@
 }
 
 .Header .fa-bars {
-    width: 25px;
-    height: 25px;
-    margin: 6px 15px 7px 10px;
+    width: 70px;
+    height: 54px;
+    padding: 14px 25px 15px 20px;
+}
+
+.Header .sidebar-btn{
+    margin: -10px 0 -10px -10px;
+}
+
+.Header .sidebar-btn :hover{
+    color: grey;
+    cursor: pointer;
 }

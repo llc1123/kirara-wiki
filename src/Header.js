@@ -25,7 +25,9 @@ class Header extends Component{
   render(){
     return(
       <div className="Header">
-        <FontAwesomeIcon icon={faBars} onClick={() => this.props.toggleFilter()}/>
+        <div className='sidebar-btn'>
+          <FontAwesomeIcon icon={faBars} onClick={() => this.props.toggleFilter()}/>
+        </div>
         <Title />
         <ButtonGroup>
           <Button color="primary" onClick={() => this.props.setLang('zh-CN')} active={this.props.lang === 'zh-CN'}>中文</Button>
