@@ -28,9 +28,9 @@ class Header extends Component{
         <FontAwesomeIcon icon={faBars} onClick={() => this.props.toggleFilter()}/>
         <Title />
         <ButtonGroup>
-          <Button color="primary" onClick = {() => this.props.setLang('zh-CN')} active={this.props.lang === 'zh-CN'}>中文</Button>
-          <Button color="primary" onClick = {() => this.props.setLang('ja-JP')} active={this.props.lang === 'ja-JP'}>日本語</Button>
-          <Button color="primary" onClick = {() => this.props.setLang('en-US')} active={this.props.lang === 'en-US'}>English</Button>
+          <Button color="primary" onClick={() => this.props.setLang('zh-CN')} active={this.props.lang === 'zh-CN'}>中文</Button>
+          <Button color="primary" onClick={() => this.props.setLang('ja-JP')} active={this.props.lang === 'ja-JP'}>日本語</Button>
+          <Button color="primary" onClick={() => this.props.setLang('en-US')} active={this.props.lang === 'en-US'}>English</Button>
         </ButtonGroup>
       </div>
     )
