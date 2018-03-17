@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Table } from 'reactstrap'
-import CharaList from './CharaList'
+import CharaList from './data/CharaList'
 import './CardList.css'
 
 class CardList extends Component{
