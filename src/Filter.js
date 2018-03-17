@@ -1,49 +1,37 @@
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Button, ButtonGroup } from 'reactstrap'
 import './Filter.css'
 
 class Filter extends Component{
-  renderButton(color,content){
+  static propTypes = {
+    'filter': PropTypes.object.isRequired,
+    'setFilter': PropTypes.func.isRequired,
+  }
+
+  renderButton(color, content, options){
     return(
-      <Button key={content} outline color={color}>{content}</Button>
+      <Button key={content} outline color={color} active={options}>{content}</Button>
     )
   }
 
   render(){
-    const rarity = ['S','SR','SSR']
-    const elements = ['Fire', 'Water', 'Earth', 'Wind', 'Sun', 'Moon']
-    const classes = ['Saber', 'Magician', 'Monk', 'Knight', 'Alchemist']
-    const series = [
-      'Hidamari Sketch',
-      'Yuyushiki',
-      'School-Live!',
-      'A-channel',
-      'Kiniro Mosaic',
-      'New Game!',
-      'Magic of Stella',
-      'Urara Meirocho',
-      'Kill Me Baby',
-      'Sakura Trick',
-      'Blend S',
-      'Dream Eater Merry',
-    ]
-
     return(
       <div className="Filter">
         <ButtonGroup vertical size="sm">
-          {rarity.map((i) => this.renderButton('info', i))}
+          {Object.keys(this.props.filter.rarity).map((i) => this.renderButton('info', i, this.props.filter.rarity[i]))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {elements.map((i) => this.renderButton('success', i))}
+          {Object.keys(this.props.filter.elements).map((i) => this.renderButton('success', i, this.props.filter.elements[i]))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {classes.map((i) => this.renderButton('primary', i))}
+          {Object.keys(this.props.filter.classes).map((i) => this.renderButton('primary', i, this.props.filter.classes[i]))}
         </ButtonGroup>
         <p />
         <ButtonGroup vertical size="sm">
-          {series.map((i) => this.renderButton('secondary', i))}
+          {Object.keys(this.props.filter.series).map((i) => this.renderButton('secondary', i, this.props.filter.series[i]))}
         </ButtonGroup>
       </div>
     )
