@@ -7,6 +7,7 @@ class Filter extends Component{
   static propTypes = {
     'filter': PropTypes.object.isRequired,
     'setFilter': PropTypes.func.isRequired,
+    'display': PropTypes.bool.isRequired,
   }
 
   clickHandler(category, item){
@@ -23,7 +24,7 @@ class Filter extends Component{
 
   render(){
     return(
-      <div className="Filter">
+      <div className={this.props.display ? 'Filter' : 'Filter hidden'}>
         <ButtonGroup vertical size="sm">
           {Object.keys(this.props.filter.rarity).map((i) => this.renderButton('info', 'rarity', i, this.props.filter.rarity[i]))}
         </ButtonGroup>

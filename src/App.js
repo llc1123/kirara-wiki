@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header lang={this.state.lang} setLang={(lang) => this.setLang(lang)} toggleFilter={() => this.toggleFilter()}/>
-        {this.state.displayFilter && <Filter filter={this.state.filter} setFilter={(filter) => this.setFilter(filter)} display={this.state.displayFilter}/>}
+        <Filter display={this.state.displayFilter} filter={this.state.filter} setFilter={(filter) => this.setFilter(filter)} />
         <div className='Cards'>
           <CardList />
           <CardDetails />
