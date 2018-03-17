@@ -1,11 +1,11 @@
 .Filter {
-    overflow-y: auto;
+    overflow: auto;
     padding: 10px;
     transition: margin 0.3s ease;
 }
 
 .Filter.hidden {
-    margin-left: -199.9px;
+    margin-left: -200px;
 }
 
 .Filter .btn-group-sm {
