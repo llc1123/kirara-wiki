@@ -30,7 +30,7 @@
     height: calc(100vh - 58px);
     display: flex;
     flex-flow: column;
-    min-width: 900px;
+    min-width: 1050px;
 }
 
 .CardList{
