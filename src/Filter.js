@@ -19,7 +19,7 @@ class Filter extends Component{
       'School-Live!',
       'A-channel',
       'Kiniro Mosaic',
-      'new game!',
+      'New Game!',
       'Magic of Stella',
       'Urara Meirocho',
       'Kill Me Baby',
