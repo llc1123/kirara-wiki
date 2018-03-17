@@ -7,10 +7,11 @@
 
 .Header {
     flex: 1 100%;
+    background: lightblue
 }
 
 .Filter {
-    background: red;
+    background: lightgray;
     flex: 0 200px;
 }
 
@@ -29,4 +30,8 @@
 .CardDetails{
     background: green;
     flex: 0 420px
+}
+
+.btn {
+    box-shadow: none !important;
 }

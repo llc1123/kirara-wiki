@@ -1,15 +1,10 @@
 .Header {
     display: flex;
-    flex: row wrap;
     padding: 10px
 }
 
 .Header .Title {
     flex: 1
-}
-
-.Header .btn-group .btn {
-    box-shadow: none !important;
 }
 
 .Header img {

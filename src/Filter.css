@@ -1,0 +1,5 @@
+.Filter {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px
+}
