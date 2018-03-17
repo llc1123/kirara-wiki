@@ -5,7 +5,7 @@ import './Filter.css'
 class Filter extends Component{
   renderButton(color,content){
     return(
-      <Button outline color={color}>{content}</Button>
+      <Button key={content} outline color={color}>{content}</Button>
     )
   }
 
