@@ -2,113 +2,113 @@
   "rarity": {
     "2": [
       "☆☆☆",
-      "false"
+      false
     ],
     "3": [
       "☆☆☆☆",
-      "false"
+      false
     ],
     "4": [
       "☆☆☆☆☆",
-      "true"
+      true
     ]
   },
   "elements": {
     "0": [
       "Fire",
-      "true"
+      true
     ],
     "1": [
       "Water",
-      "true"
+      true
     ],
     "2": [
       "Earth",
-      "true"
+      true
     ],
     "3": [
       "Wind",
-      "true"
+      true
     ],
     "4": [
       "Moon",
-      "true"
+      true
     ],
     "5": [
       "Sun",
-      "true"
+      true
     ]
   },
   "classes": {
     "0": [
       "Fighter",
-      "true"
+      true
     ],
     "1": [
       "Magician",
-      "true"
+      true
     ],
     "2": [
       "Priest",
-      "true"
+      true
     ],
     "3": [
       "Knight",
-      "true"
+      true
     ],
     "4": [
       "Alchemist",
-      "true"
+      true
     ]
   },
   "series": {
     "0": [
       "Hidamari Sketch",
-      "true"
+      true
     ],
     "1": [
       "Yuyushiki",
-      "true"
+      true
     ],
     "2": [
       "School-Live!",
-      "true"
+      true
     ],
     "3": [
       "A-channel",
-      "true"
+      true
     ],
     "4": [
       "Kiniro Mosaic",
-      "true"
+      true
     ],
     "5": [
       "New Game!",
-      "true"
+      true
     ],
     "6": [
       "Magic of Stella",
-      "true"
+      true
     ],
     "7": [
       "Urara Meirocho",
-      "true"
+      true
     ],
     "8": [
       "Kill Me Baby",
-      "true"
+      true
     ],
     "9": [
       "Sakura Trick",
-      "true"
+      true
     ],
     "10": [
       "Blend S",
-      "true"
+      true
     ],
     "16": [
       "Dream Eater Merry",
-      "true"
+      true
     ]
   }
 }
