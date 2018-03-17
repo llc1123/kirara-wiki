@@ -1,7 +1,3 @@
 .CardList{
     display: flex;
 }
-
-.CardList table {
-    width: 100%;
-}
