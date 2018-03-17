@@ -5,19 +5,24 @@
 .App {
     margin: auto;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     align-content: flex-start;
 }
 
 .Header {
-    flex: 1 100%;
     background: lightblue
+}
+
+.main {
+    display: flex;
+    flex-flow: row nowrap
 }
 
 .Filter {
     background: lightgray;
     height: calc(100vh - 58px);
     flex: 0 200px;
+    min-width: 200px
 }
 
 .Cards {
@@ -25,10 +30,11 @@
     height: calc(100vh - 58px);
     display: flex;
     flex-flow: column;
+    min-width: 900px;
 }
 
 .CardList{
-    flex: 1
+    flex: 1;
 }
 
 .CardDetails{
@@ -41,6 +47,7 @@
 
 ::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-track {

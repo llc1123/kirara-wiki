@@ -24,9 +24,9 @@ class App extends Component {
         'Moon':true,
       },
       'classes': {
-        'Saber': true,
+        'Fighter': true,
         'Magician': true,
-        'Monk': true,
+        'Priest': true,
         'Knight': true,
         'Alchemist': true,
       },
@@ -63,10 +63,12 @@ class App extends Component {
     return (
       <div className='App'>
         <Header lang={this.state.lang} setLang={(lang) => this.setLang(lang)} toggleFilter={() => this.toggleFilter()}/>
-        <Filter display={this.state.displayFilter} filter={this.state.filter} setFilter={(filter) => this.setFilter(filter)} />
-        <div className='Cards'>
-          <CardList />
-          <CardDetails />
+        <div className='main'>
+          <Filter display={this.state.displayFilter} filter={this.state.filter} setFilter={(filter) => this.setFilter(filter)} />
+          <div className='Cards'>
+            <CardList />
+            <CardDetails />
+          </div>
         </div>
       </div>
     )
