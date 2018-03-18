@@ -9,18 +9,31 @@ class CardList extends Component{
     'filter': PropTypes.object.isRequired,
   }
 
+  renderName(a) {
+    if (a.indexOf('【') > -1) {
+      return(
+        <div>{a.substr(0, a.indexOf('【'))}<br />{a.substr(a.indexOf('【'))}</div>
+      )
+    } else {
+      return(
+        <div>{a}</div>
+      )
+    }
+  }
+
   renderItem(key, item){
     if (key % 10 === 1) return
     if (!this.props.filter.rarity[item.Rare][1]) return
     if (!this.props.filter.elements[item.Element][1]) return
     if (!this.props.filter.classes[item.Class][1]) return
-    if (!this.props.filter.series[item.TitleType][1]) return 
+    if (!this.props.filter.series[item.TitleType][1]) return
+
     return(
       <tr>
         <th className="align-middle">
           <img className='charaicon' src={process.env.PUBLIC_URL + '/images/charaicon/charaicon_' + key + '.png'} alt={key}/>
         </th>
-        <th className="align-middle">{item.Name}</th>
+        <th className="align-middle">{this.renderName(item.Name)}</th>
         <th className="align-middle">
           <img className='titleicon' src={process.env.PUBLIC_URL + '/images/series/' + item.TitleType + '.png'} alt={item.TitleType}/>
         </th>
