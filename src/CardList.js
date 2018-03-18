@@ -17,20 +17,30 @@ class CardList extends Component{
     if (!this.props.filter.series[item.TitleType][1]) return 
     return(
       <tr>
-        <th>{key}</th>
-        <th>{item.Name}</th>
-        <th>{this.props.filter.series[item.TitleType][0]}</th>
-        <th>{this.props.filter.rarity[item.Rare][0]}</th>
-        <th>{this.props.filter.classes[item.Class][0]}</th>
-        <th>{this.props.filter.elements[item.Element][0]}</th>
-        <th>{item.HP}</th>
-        <th>{item.ATK}</th>
-        <th>{item.DEF}</th>
-        <th>{item.MAT}</th>
-        <th>{item.MDF}</th>
-        <th>{item.SPD}</th>
-        <th>{item.LUK}</th>
-        <th>{item.CV}</th>
+        <th className="align-middle">
+          <img className='charaicon' src={process.env.PUBLIC_URL + '/images/charaicon/charaicon_' + key + '.png'} alt={key}/>
+        </th>
+        <th className="align-middle">{item.Name}</th>
+        <th className="align-middle">
+          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/series/' + item.TitleType + '.png'} alt={item.TitleType}/>
+        </th>
+        <th className="align-middle">
+          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/rarity/' + item.Rare + '.png'} alt={item.Rare} />
+        </th>
+        <th className="align-middle">
+          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/classes/' + item.Class + '.png'} alt={item.Class} />
+        </th>
+        <th className="align-middle">
+          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/elements/' + item.Element + '.png'} alt={item.Element} />
+        </th>
+        <th className="align-middle">{item.HP}</th>
+        <th className="align-middle">{item.ATK}</th>
+        <th className="align-middle">{item.DEF}</th>
+        <th className="align-middle">{item.MAT}</th>
+        <th className="align-middle">{item.MDF}</th>
+        <th className="align-middle">{item.SPD}</th>
+        <th className="align-middle">{item.LUK}</th>
+        <th className="align-middle">{item.CV}</th>
       </tr>
     )
   }
@@ -38,10 +48,10 @@ class CardList extends Component{
   render(){
     return(
       <div className="CardList">
-        <Table striped hover size="sm" responsive>
+        <Table bordered striped hover size="sm" responsive>
           <thead>
             <tr>
-              <th>CharaID</th>
+              <th>Icon</th>
               <th>Name</th>
               <th>Title</th>
               <th>Rarity</th>
