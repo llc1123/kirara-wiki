@@ -1,64 +1,64 @@
 * {
-    user-select: none;
+  user-select: none;
 }
 
 .App {
-    margin: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    align-content: flex-start;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-start;
 }
 
 .Header {
-    background: lightblue
+  background: lightblue;
 }
 
 .main {
-    display: flex;
-    flex-flow: row nowrap
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .Filter {
-    background: lightgray;
-    height: calc(100vh - 58px);
-    flex: 0 200px;
-    min-width: 200px
+  background: lightgray;
+  height: calc(100vh - 58px);
+  flex: 0 200px;
+  min-width: 200px;
 }
 
 .Cards {
-    flex: 1;
-    height: calc(100vh - 58px);
-    display: flex;
-    flex-flow: column;
-    /* min-width: 1050px; */
+  flex: 1;
+  height: calc(100vh - 58px);
+  display: flex;
+  flex-flow: column;
+  /* min-width: 1050px; */
 }
 
-.CardList{
-    flex: 1;
+.CardList {
+  flex: 1;
 }
 
-.CardDetails{
-    background: green;
+.CardDetails {
+  background: green;
 }
 
 .btn {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: none; 
+  background: none;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
+  background: #888;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }

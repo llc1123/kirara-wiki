@@ -1,25 +1,25 @@
 .Filter {
-    overflow: auto;
-    padding: 10px;
-    transition: margin 0.3s ease;
+  overflow: auto;
+  padding: 10px;
+  transition: margin 0.3s ease;
 }
 
 .Filter.hidden {
-    margin-left: -200px;
+  margin-left: -200px;
 }
 
 .Filter .btn-group-sm {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .Filter .btn-group-sm .btn {
-    flex: 1;
-    border-radius: 0;
-    margin: -0.5px;
+  flex: 1;
+  border-radius: 0;
+  margin: -0.5px;
 }
 
 .Filter .btn-group-sm .btn img {
-    height: 36px
+  height: 36px;
 }

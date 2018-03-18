@@ -1,12 +1,12 @@
-.CardList{
-    display: flex;
-    text-align: center;
+.CardList {
+  display: flex;
+  text-align: center;
 }
 
 .CardList img.charaicon {
-    height: 72px
+  height: 72px;
 }
 
 .CardList img.titleicon {
-    height: 48px
+  height: 48px;
 }

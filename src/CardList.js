@@ -4,47 +4,88 @@ import { Table } from 'reactstrap'
 import CharaList from './data/CharaList'
 import './CardList.css'
 
-class CardList extends Component{
+class CardList extends Component {
   static propTypes = {
-    'filter': PropTypes.object.isRequired,
+    filter: PropTypes.object.isRequired,
   }
 
   renderName(a) {
     if (a.indexOf('【') > -1) {
-      return(
-        <div>{a.substr(0, a.indexOf('【'))}<br />{a.substr(a.indexOf('【'))}</div>
+      return (
+        <div>
+          {a.substr(0, a.indexOf('【'))}
+          <br />
+          {a.substr(a.indexOf('【'))}
+        </div>
       )
     } else {
-      return(
-        <div>{a}</div>
-      )
+      return <div>{a}</div>
     }
   }
 
-  renderItem(key, item){
+  renderItem(key, item) {
     if (key % 10 === 1) return
     if (!this.props.filter.rarity[item.Rare][1]) return
     if (!this.props.filter.elements[item.Element][1]) return
     if (!this.props.filter.classes[item.Class][1]) return
     if (!this.props.filter.series[item.TitleType][1]) return
 
-    return(
+    return (
       <tr>
         <th className="align-middle">
-          <img className='charaicon' src={process.env.PUBLIC_URL + '/images/charaicon/charaicon_' + key + '.png'} alt={key}/>
+          <img
+            className="charaicon"
+            src={
+              process.env.PUBLIC_URL +
+              '/images/charaicon/charaicon_' +
+              key +
+              '.png'
+            }
+            alt={key}
+          />
         </th>
         <th className="align-middle">{this.renderName(item.Name)}</th>
         <th className="align-middle">
-          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/series/' + item.TitleType + '.png'} alt={item.TitleType}/>
+          <img
+            className="titleicon"
+            src={
+              process.env.PUBLIC_URL +
+              '/images/series/' +
+              item.TitleType +
+              '.png'
+            }
+            alt={item.TitleType}
+          />
         </th>
         <th className="align-middle">
-          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/rarity/' + item.Rare + '.png'} alt={item.Rare} />
+          <img
+            className="titleicon"
+            src={
+              process.env.PUBLIC_URL + '/images/rarity/' + item.Rare + '.png'
+            }
+            alt={item.Rare}
+          />
         </th>
         <th className="align-middle">
-          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/classes/' + item.Class + '.png'} alt={item.Class} />
+          <img
+            className="titleicon"
+            src={
+              process.env.PUBLIC_URL + '/images/classes/' + item.Class + '.png'
+            }
+            alt={item.Class}
+          />
         </th>
         <th className="align-middle">
-          <img className='titleicon' src={process.env.PUBLIC_URL + '/images/elements/' + item.Element + '.png'} alt={item.Element} />
+          <img
+            className="titleicon"
+            src={
+              process.env.PUBLIC_URL +
+              '/images/elements/' +
+              item.Element +
+              '.png'
+            }
+            alt={item.Element}
+          />
         </th>
         <th className="align-middle">{item.HP}</th>
         <th className="align-middle">{item.ATK}</th>
@@ -58,8 +99,8 @@ class CardList extends Component{
     )
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="CardList">
         <Table bordered striped hover size="sm" responsive>
           <thead>
@@ -81,7 +122,7 @@ class CardList extends Component{
             </tr>
           </thead>
           <tbody>
-            {Object.keys(CharaList).map((i) => this.renderItem(i, CharaList[i]))}
+            {Object.keys(CharaList).map(i => this.renderItem(i, CharaList[i]))}
           </tbody>
         </Table>
       </div>
