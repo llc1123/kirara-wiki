@@ -9,5 +9,17 @@
 }
 
 .Filter .btn-group-sm {
-    width: 100%
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.Filter .btn-group-sm .btn {
+    flex: 1;
+    border-radius: 0;
+    margin: -0.5px;
+}
+
+.Filter .btn-group-sm .btn img {
+    height: 32px
 }

@@ -19,7 +19,7 @@ class Filter extends Component{
   renderButton(color, category, item){
     return(
       <Button key={item} outline color={color} active={this.props.filter[category][item][1]} onClick={() => this.clickHandler(category, item)}>
-        {this.props.filter[category][item][0]}
+        <img src={process.env.PUBLIC_URL + '/images/' + category + '/' + item + '.png'} alt={category+item}/>
       </Button>
     )
   }
@@ -27,15 +27,15 @@ class Filter extends Component{
   render(){
     return(
       <div className={this.props.display ? 'Filter' : 'Filter hidden'}>
-        <ButtonGroup vertical size="sm">
+        <ButtonGroup size="sm">
           {Object.keys(this.props.filter.rarity).map((i) => this.renderButton('info', 'rarity', i))}
         </ButtonGroup>
         <p />
-        <ButtonGroup vertical size="sm">
+        <ButtonGroup size="sm">
           {Object.keys(this.props.filter.elements).map((i) => this.renderButton('success', 'elements', i))}
         </ButtonGroup>
         <p />
-        <ButtonGroup vertical size="sm">
+        <ButtonGroup size="sm">
           {Object.keys(this.props.filter.classes).map((i) => this.renderButton('primary', 'classes', i))}
         </ButtonGroup>
         <p />
