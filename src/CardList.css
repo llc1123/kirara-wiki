@@ -11,3 +11,13 @@
 .CardList img.titleicon {
   height: 48px;
 }
+/* 
+.CardList thead tr{
+  display: block;
+}
+
+.CardList tbody {
+  display: block;
+  overflow: auto;
+  width: 100%
+} */
