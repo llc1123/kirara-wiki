@@ -1,5 +1,6 @@
 .CardList {
   display: flex;
+  flex-flow: column nowrap;
   text-align: center;
 }
 
