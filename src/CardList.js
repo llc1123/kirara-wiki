@@ -7,6 +7,16 @@ import './CardList.css'
 class CardList extends Component {
   static propTypes = {
     filter: PropTypes.object.isRequired,
+    cards: PropTypes.array.isRequired,
+    setCards: PropTypes.func.isRequired,
+  }
+
+  addCard(key) {
+    let cards = this.props.cards.slice()
+    if (!cards.includes(key)) {
+      cards.push(key)
+    }
+    this.props.setCards(cards)
   }
 
   renderName(a) {
@@ -31,7 +41,7 @@ class CardList extends Component {
     if (!this.props.filter.series[item.TitleType][1]) return
 
     return (
-      <tr>
+      <tr key={key} onClick={() => this.addCard(key)}>
         <th className="align-middle">
           <img
             className="charaicon"

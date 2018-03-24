@@ -1,0 +1,15 @@
+.CardDetails {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px;
+}
+
+.CardDetails .cardThumb {
+    margin: 5px;
+    flex: 0 0
+}
+
+.CardDetails .charaicon {
+    height: 75px;
+
+}

@@ -11,6 +11,7 @@ class App extends Component {
     lang: 'zh-CN',
     displayFilter: true,
     filter: filter,
+    cards: [],
   }
 
   setLang(lang) {
@@ -23,6 +24,10 @@ class App extends Component {
 
   toggleFilter() {
     this.setState({ displayFilter: !this.state.displayFilter })
+  }
+
+  setCards(cards) {
+    this.setState({ cards: cards })
   }
 
   render() {
@@ -40,8 +45,15 @@ class App extends Component {
             setFilter={filter => this.setFilter(filter)}
           />
           <div className="Cards">
-            <CardList filter={this.state.filter} />
-            <CardDetails />
+            <CardList
+              filter={this.state.filter}
+              cards={this.state.cards}
+              setCards={cards => this.setCards(cards)}
+            />
+            <CardDetails
+              cards={this.state.cards}
+              setCards={cards => this.setCards(cards)}
+            />
           </div>
         </div>
       </div>
