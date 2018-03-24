@@ -8,7 +8,9 @@ class CardList extends Component {
   static propTypes = {
     filter: PropTypes.object.isRequired,
     cards: PropTypes.array.isRequired,
+    activated: PropTypes.array.isRequired,
     setCards: PropTypes.func.isRequired,
+    setActivated: PropTypes.func.isRequired,
   }
 
   addCard(key) {
@@ -17,6 +19,13 @@ class CardList extends Component {
       cards.push(key)
     }
     this.props.setCards(cards)
+
+    let activated = this.props.activated.slice()
+    if (activated.includes(key)) {
+      activated.splice(activated.indexOf(key), 1)
+    }
+    activated.push(key)
+    this.props.setActivated(activated)
   }
 
   renderName(a) {

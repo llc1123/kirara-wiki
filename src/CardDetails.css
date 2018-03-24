@@ -8,7 +8,32 @@
 .CardDetails .cardThumb {
     margin: 5px;
     flex: 0 0;
-    
+    position: relative;
+    opacity: 0.8;
+    border-radius: 8px;
+}
+
+.CardDetails .cardThumb:hover {
+    opacity: 1;
+}
+
+.CardDetails .cardThumb[active="true"] {
+    opacity: 1;
+    box-shadow: 0 0 5px 5px lightblue;
+}
+
+.CardDetails .closeButton {
+    position: absolute;
+    color: black;
+    opacity: 0.5;
+    height: 20px;
+    width: 20px;
+    top: 0;
+    right: 0;
+}
+
+.CardDetails .closeButton:hover {
+    opacity: 1;
 }
 
 .CardDetails .charaicon {

@@ -12,6 +12,7 @@ class App extends Component {
     displayFilter: true,
     filter: filter,
     cards: [],
+    activated: [],
   }
 
   setLang(lang) {
@@ -28,6 +29,10 @@ class App extends Component {
 
   setCards(cards) {
     this.setState({ cards: cards })
+  }
+
+  setActivated(activated) {
+    this.setState({ activated: activated })
   }
 
   render() {
@@ -48,11 +53,15 @@ class App extends Component {
             <CardList
               filter={this.state.filter}
               cards={this.state.cards}
+              activated={this.state.activated}
               setCards={cards => this.setCards(cards)}
+              setActivated={activated => this.setActivated(activated)}
             />
             <CardDetails
               cards={this.state.cards}
+              activated={this.state.activated}
               setCards={cards => this.setCards(cards)}
+              setActivated={activated => this.setActivated(activated)}
             />
           </div>
         </div>
