@@ -20,6 +20,10 @@
   margin: -0.5px;
 }
 
+.Filter .btn-group-sm .btn:hover {
+  opacity: 0.7;
+}
+
 .Filter .btn-group-sm .btn img {
   height: 36px;
 }
