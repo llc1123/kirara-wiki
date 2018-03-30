@@ -18,6 +18,7 @@
   flex: 1;
   border-radius: 0;
   margin: -0.5px;
+  transition: opacity 0.3s;
 }
 
 .Filter .btn-group-sm .btn:hover {
