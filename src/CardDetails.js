@@ -32,14 +32,22 @@ class CardDetails extends Component {
   }
 
   setEvolve(key) {
-    if (key%10 === 0){
-      let cards = this.props.cards.map((a) => {return a === key ? (parseInt(a, 10) + 1).toString() : a})
-      let activated = this.props.activated.map((a) => {return a === key ? (parseInt(a, 10) + 1).toString() : a})
+    if (key % 10 === 0) {
+      let cards = this.props.cards.map(a => {
+        return a === key ? (parseInt(a, 10) + 1).toString() : a
+      })
+      let activated = this.props.activated.map(a => {
+        return a === key ? (parseInt(a, 10) + 1).toString() : a
+      })
       this.props.setCards(cards)
       this.props.setActivated(activated)
-    }else{
-      let cards = this.props.cards.map((a) => {return a === key ? (parseInt(a, 10) - 1).toString() : a})
-      let activated = this.props.activated.map((a) => {return a === key ? (parseInt(a, 10) - 1).toString() : a})
+    } else {
+      let cards = this.props.cards.map(a => {
+        return a === key ? (parseInt(a, 10) - 1).toString() : a
+      })
+      let activated = this.props.activated.map(a => {
+        return a === key ? (parseInt(a, 10) - 1).toString() : a
+      })
       this.props.setCards(cards)
       this.props.setActivated(activated)
     }
@@ -73,6 +81,16 @@ class CardDetails extends Component {
     )
   }
 
+  renderEvolveButton(key) {
+    if (key[4] !== '0') {
+      return (
+        <Button color="warning" onClick={() => this.setEvolve(key)}>
+          Toggle Evolve
+        </Button>
+      )
+    }
+  }
+
   renderCardDetail(key) {
     return (
       <div className="Card">
@@ -86,11 +104,8 @@ class CardDetails extends Component {
           }
           alt={key}
         />
-        <div className="part1">
-          <Button color="warning" onClick={() => this.setEvolve(key)}>Toggle Evolve</Button>
-        </div>
-        <div className="part2">
-        </div>
+        <div className="part1">{this.renderEvolveButton(key)}</div>
+        <div className="part2" />
       </div>
     )
   }
