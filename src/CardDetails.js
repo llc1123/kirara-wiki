@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import { Button } from 'reactstrap'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/fontawesome-free-solid'
 import './CardDetails.css'
@@ -30,6 +31,20 @@ class CardDetails extends Component {
     this.props.setActivated(activated)
   }
 
+  setEvolve(key) {
+    if (key%10 === 0){
+      let cards = this.props.cards.map((a) => {return a === key ? (parseInt(a, 10) + 1).toString() : a})
+      let activated = this.props.activated.map((a) => {return a === key ? (parseInt(a, 10) + 1).toString() : a})
+      this.props.setCards(cards)
+      this.props.setActivated(activated)
+    }else{
+      let cards = this.props.cards.map((a) => {return a === key ? (parseInt(a, 10) - 1).toString() : a})
+      let activated = this.props.activated.map((a) => {return a === key ? (parseInt(a, 10) - 1).toString() : a})
+      this.props.setCards(cards)
+      this.props.setActivated(activated)
+    }
+  }
+
   renderCardIcon(key) {
     return (
       <div
@@ -41,7 +56,7 @@ class CardDetails extends Component {
         <div className="closeButton">
           <FontAwesomeIcon
             icon={faTimesCircle}
-            onClick={(e) => this.removeCard(e, key)}
+            onClick={e => this.removeCard(e, key)}
           />
         </div>
         <img
@@ -58,10 +73,36 @@ class CardDetails extends Component {
     )
   }
 
+  renderCardDetail(key) {
+    return (
+      <div className="Card">
+        <img
+          className="CardImg"
+          src={
+            process.env.PUBLIC_URL +
+            '/images/characard/characard_' +
+            key +
+            '.png'
+          }
+          alt={key}
+        />
+        <div className="part1">
+          <Button color="warning" onClick={() => this.setEvolve(key)}>Toggle Evolve</Button>
+        </div>
+        <div className="part2">
+        </div>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="CardDetails">
-        {this.props.cards.map(key => this.renderCardIcon(key))}
+        <div className="CardDetailsList">
+          {this.props.cards.map(key => this.renderCardIcon(key))}
+        </div>
+        {this.props.activated[0] &&
+          this.renderCardDetail(this.props.activated.slice(-1)[0].toString())}
       </div>
     )
   }

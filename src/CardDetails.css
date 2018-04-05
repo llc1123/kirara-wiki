@@ -1,11 +1,15 @@
 .CardDetails {
+    border-radius: 10px 10px 0 0;
+}
+
+.CardDetails .CardDetailsList {
     display: flex;
     flex-flow: row wrap;
     padding: 5px;
     border-radius: 10px 10px 0 0;
 }
 
-.CardDetails .cardThumb {
+.CardDetails .CardDetailsList .cardThumb {
     margin: 5px;
     flex: 0 0;
     position: relative;
@@ -13,16 +17,16 @@
     border-radius: 8px;
 }
 
-.CardDetails .cardThumb:hover {
+.CardDetails .CardDetailsList .cardThumb:hover {
     opacity: 1;
 }
 
-.CardDetails .cardThumb[active="true"] {
+.CardDetails .CardDetailsList .cardThumb[active="true"] {
     opacity: 1;
     box-shadow: 0 0 5px 5px lightblue;
 }
 
-.CardDetails .closeButton {
+.CardDetails .CardDetailsList .closeButton {
     position: absolute;
     color: black;
     opacity: 0.5;
@@ -32,11 +36,34 @@
     right: 0;
 }
 
-.CardDetails .closeButton:hover {
+.CardDetails .CardDetailsList .closeButton:hover {
     opacity: 1;
 }
 
-.CardDetails .charaicon {
+.CardDetails .CardDetailsList .charaicon {
     height: 75px;
+    width: 75px;
     border-radius: 10px
+}
+
+.CardDetails .Card {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.CardDetails .Card .CardImg {
+    width: 375px;
+    height: 500px;
+    border-radius: 10px;
+    flex: 0 0 375px;
+}
+
+.CardDetails .Card .part1 {
+    background-color: aliceblue;
+    flex: 1;
+}
+
+.CardDetails .Card .part2 {
+    background-color: antiquewhite;
+    flex: 1;
 }

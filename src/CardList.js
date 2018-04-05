@@ -15,7 +15,7 @@ class CardList extends Component {
 
   addCard(key) {
     let cards = this.props.cards.slice()
-    if (!cards.includes(key)) {
+    if (!cards.includes(key) && !cards.includes((parseInt(key, 10) + 1).toString())) {
       cards.push(key)
     }
     this.props.setCards(cards)
@@ -23,8 +23,14 @@ class CardList extends Component {
     let activated = this.props.activated.slice()
     if (activated.includes(key)) {
       activated.splice(activated.indexOf(key), 1)
+      activated.push(key)
+    }else if (activated.includes((parseInt(key, 10) + 1).toString())) {
+      activated.splice(activated.indexOf((parseInt(key, 10) + 1).toString()), 1)
+      activated.push((parseInt(key, 10) + 1).toString())
+    }else{
+      activated.push(key)
     }
-    activated.push(key)
+    
     this.props.setActivated(activated)
   }
 
